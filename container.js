@@ -13,6 +13,8 @@ import { useTheme } from "native-base";
 import FormNativeBase from "./src/screens/form";
 import Hello from "./src/screens/hello";
 import IncDec from "./src/screens/incDec";
+import ListSoc from "./src/screens/listSoc";
+import DetailSoc from "./src/screens/detailSoc";
 
 const Stack = createStackNavigator();
 
@@ -37,6 +39,8 @@ function MyTab() {
             iconName = focused
               ? "ios-information-circle"
               : "ios-information-circle-outline";
+          } else if (route.name === "Social Media") {
+            iconName = focused ? "ios-list-circle" : "ios-list-circle-outline";
           }
 
           return <Ionicons name={iconName} size={size} color={color} />;
@@ -47,6 +51,7 @@ function MyTab() {
     >
       <Tab.Screen name="Home" component={Hello} />
       <Tab.Screen name="Form" component={FormNativeBase} />
+      <Tab.Screen name="Social Media" component={ListSoc} />
     </Tab.Navigator>
   );
 }
@@ -69,6 +74,16 @@ export default function Container() {
           component={IncDec}
           options={{
             title: "Increment Decrement",
+            headerMode: "screen",
+            headerTintColor: "white",
+            headerStyle: { backgroundColor: theme.colors.muted["800"] },
+          }}
+        />
+        <Stack.Screen
+          name="Detail Social"
+          component={DetailSoc}
+          options={{
+            title: "Detail Social",
             headerMode: "screen",
             headerTintColor: "white",
             headerStyle: { backgroundColor: theme.colors.muted["800"] },

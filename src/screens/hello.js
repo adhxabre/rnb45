@@ -22,20 +22,6 @@ export default function Hello({ navigation }) {
       >
         <Text>Screen Increment and Decrement</Text>
       </Pressable>
-      <Pressable
-        onPress={() => navigation.navigate("Form")}
-        style={{
-          backgroundColor: "#487eb0",
-          height: 40,
-          width: "100%",
-          alignItems: "center",
-          justifyContent: "center",
-          borderRadius: 10,
-          margin: 20,
-        }}
-      >
-        <Text>Sign In</Text>
-      </Pressable>
     </Box>
   );
 }
